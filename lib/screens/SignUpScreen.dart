@@ -32,17 +32,85 @@ class SignUpScreen extends StatelessWidget {
                 height: 400,
                 margin: EdgeInsets.symmetric(horizontal: 10),
                 width: double.infinity,
-                color: Colors.blue,
+                //color: Colors.blue,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     TextFormField(
                       decoration: InputDecoration(
                         hintText: "UserName",
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            FocusScope.of(context).unfocus();
+                          },
+                          child: Icon(
+                            Icons.visibility,
+                            color: Colors.black,
+                          ),
+                        ),
                         hintStyle: TextStyle(
                           color: Colors.black,
                         ),
                         border: OutlineInputBorder(),
                       ),
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "UserName",
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            FocusScope.of(context).unfocus();
+                          },
+                          child: Icon(
+                            Icons.visibility,
+                            color: Colors.black,
+                          ),
+                        ),
+                        hintStyle: TextStyle(
+                          color: Colors.black,
+                        ),
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "UserName",
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            FocusScope.of(context).unfocus();
+                          },
+                          child: Icon(
+                            Icons.visibility,
+                            color: Colors.black,
+                          ),
+                        ),
+                        hintStyle: TextStyle(
+                          color: Colors.black,
+                        ),
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    Container(
+                      height: 45,
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                            Colors.green,
+                          ),
+                          padding: MaterialStateProperty.all(
+                            const EdgeInsets.all(20),
+                          ),
+                          textStyle: MaterialStateProperty.all(
+                            const TextStyle(fontSize: 14, color: Colors.white),
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: const Text('REGISTER'),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
                     ),
                   ],
                 ),
