@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
+  @override
+  _SignUpScreenState createState() => _SignUpScreenState();
+}
+
+final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
+class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
+        child: Form(
           child: Column(
             children: <Widget>[
               Container(
                 height: 250,
                 width: double.infinity,
-                //color: Colors.blue,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
@@ -32,13 +38,30 @@ class SignUpScreen extends StatelessWidget {
                 height: 400,
                 margin: EdgeInsets.symmetric(horizontal: 10),
                 width: double.infinity,
-                //color: Colors.blue,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     TextFormField(
                       decoration: InputDecoration(
-                        hintText: "UserName",
+                        hintText: "Username",
+                        hintStyle: TextStyle(
+                          color: Colors.black,
+                        ),
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "Email",
+                        hintStyle: TextStyle(
+                          color: Colors.black,
+                        ),
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "Password",
                         suffixIcon: GestureDetector(
                           onTap: () {
                             FocusScope.of(context).unfocus();
@@ -56,34 +79,8 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     TextFormField(
                       decoration: InputDecoration(
-                        hintText: "UserName",
-                        suffixIcon: GestureDetector(
-                          onTap: () {
-                            FocusScope.of(context).unfocus();
-                          },
-                          child: Icon(
-                            Icons.visibility,
-                            color: Colors.black,
-                          ),
-                        ),
-                        hintStyle: TextStyle(
-                          color: Colors.black,
-                        ),
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        hintText: "UserName",
-                        suffixIcon: GestureDetector(
-                          onTap: () {
-                            FocusScope.of(context).unfocus();
-                          },
-                          child: Icon(
-                            Icons.visibility,
-                            color: Colors.black,
-                          ),
-                        ),
+                        hintText: "Phone Number",
+                        icon: Icon(Icons.phone),
                         hintStyle: TextStyle(
                           color: Colors.black,
                         ),
@@ -108,6 +105,23 @@ class SignUpScreen extends StatelessWidget {
                         onPressed: () {},
                         child: const Text('REGISTER'),
                       ),
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text("I Already have an Account!"),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        GestureDetector(
+                          child: Text(
+                            "Login",
+                            style: TextStyle(
+                                color: Colors.teal.shade900,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       height: 20,
